@@ -2521,7 +2521,10 @@ class PersonasController extends Controller
             $email = $request_data['order_email'];
             $telefono = '0000000000'; // Valor por defecto para teléfono
             $dni = $request_data['order_last_name'];
-            $contraseña = Str::random(10); // Generar una contraseña aleatoria de 10 caracteres
+
+            //IMPORTANTE WOOPI DESCOMENTAR
+            //$contraseña = Str::random(10); // Generar una contraseña aleatoria de 10 caracteres
+            $contraseña = "123456"; // Generar una contraseña aleatoria de 10 caracteres
 
             // Validar los datos (de manera similar al código de store)
             $validated = [
