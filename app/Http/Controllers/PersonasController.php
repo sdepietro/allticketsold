@@ -2524,7 +2524,7 @@ class PersonasController extends Controller
 
             //IMPORTANTE WOOPI DESCOMENTAR
             //$contraseña = Str::random(10); // Generar una contraseña aleatoria de 10 caracteres
-            $contraseña = "123456"; // Generar una contraseña aleatoria de 10 caracteres
+            $contraseña = "12345678"; // Generar una contraseña aleatoria de 10 caracteres
 
             // Validar los datos (de manera similar al código de store)
             $validated = [
