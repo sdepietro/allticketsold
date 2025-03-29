@@ -2405,10 +2405,10 @@ class PersonasController extends Controller
         }
 
         $keys_data = [
-            'public_key' => env('DECIDIR_PUBLIC_KEY'),
-            'private_key' => env('DECIDIR_SECRET_KEY'),
+            'public_key' => config('decidir.decidir_public_key'),
+            'private_key' => config('decidir.decidir_secret_key'),
         ];
-        $ambient = env('DECIDIR_AMBIENT');
+        $ambient = config('decidir.ambient');
 
         $connector = new Connector($keys_data, $ambient);
 
