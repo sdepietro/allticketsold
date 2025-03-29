@@ -212,7 +212,7 @@
 @else
 	    <div class="swiper-slide swiper-slide2 animationShow" onclick="redirigir('{{ $event->title }}')">
 
-              <img src="{{ !empty($event->images->first()->image_path)?asset($event2->images->first()->image_path):"" }}" alt="" />
+              <img src="{{ !empty($event->images->first()->image_path)?asset($event->images->first()->image_path):"" }}" alt="" />
 
                  <div class="containerDescription">
                 <div class="flex flex-col text-justify">
