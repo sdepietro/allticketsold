@@ -6,7 +6,7 @@
 <style>
         /* Estilos generales */
         .custom-container {
-          
+
             padding: 20px;
         }
 
@@ -37,8 +37,8 @@
             .custom-col-md-8, .custom-col-md-4 {
                 flex: 0 0 100%; /* Las columnas ocupan el 100% */
                 max-width: 100%;
-				
-				
+
+
             }
 			.custom-row {
             display: flex;
@@ -68,7 +68,7 @@
         .custom-button i {
             margin-right: 8px;
         }
-    </style>	
+    </style>
 <style>
 input:-webkit-autofill {
   background-color: #1684df !important; /* Cambia el color de fondo del autocompletado en Chrome */
@@ -207,8 +207,8 @@ input[type="checkbox"] {
 </style>
 
     <div class="flex flex-col justify-between h-full" style="display: flex;flex-direction: column;justify-content: flex-start;height: auto;width: 100%;">
-     
-      
+
+
 <div class="bgMainObras">
 
 <section id='order_form' class="container">
@@ -221,7 +221,7 @@ input[type="checkbox"] {
                     </div>
         <!-- Página 1 -->
         <div class="page" id="page1">
-            
+
             <div class="row">
                 <div class="col-md-12" style="text-align: center">
                     @lang("Public_ViewEvent.below_order_details_header")
@@ -245,7 +245,7 @@ input[type="checkbox"] {
                                         @else
                                             {{ money($ticket['price'], $event->currency) }}
                                         @endif
-				
+
                                     </td>
                                 </tr>
                                 @endforeach
@@ -255,7 +255,7 @@ input[type="checkbox"] {
 					@else
 
 					@endif
-				
+
                             </table>
                         </div>
                         @if($order_total > 0)
@@ -276,7 +276,7 @@ input[type="checkbox"] {
                         </div>
                         @endif
                     </div>
-                    
+
                 </div>
                 <div class="col-md-8 col-md-pull-4">
                     {!! Form::open(['url' => route('personas.postValidateOrder', ['event_id' => $event_id]), 'class' => 'ajax payment-form', 'id' => 'formularioproceso']) !!}
@@ -296,7 +296,7 @@ input[type="checkbox"] {
                                 {!! Form::text("order_first_name", Auth::guard('clientes')->user() ? Auth::guard('clientes')->user()->nombres : '', ['required' => 'required', 'class' => 'form-control', 'id' => 'order_first_name']) !!}
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -389,7 +389,7 @@ input[type="checkbox"] {
                 <div class="col-md-12">
 			<h3>@lang("Public_ViewEvent.ticket_holder_information")</h3>
                     <div class="ticket_holders_details" style="display: flex;flex-wrap: wrap;justify-content: space-around;align-content: space-between;">
-                        
+
                         <?php
                             $total_attendee_increment = 0;
                         ?>
@@ -415,7 +415,7 @@ input[type="checkbox"] {
                                                 {!! Form::text("ticket_holder_first_name[{$i}][{$ticket['ticket']['id']}]", null, ['class' => "ticket_holder_first_name.$i.{$ticket['ticket']['id']} ticket_holder_first_name form-control"]) !!}
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
@@ -435,16 +435,16 @@ input[type="checkbox"] {
             </div>
 			<button type="button" class="btn btn-secondary" onclick="prevPage(2)" style="border: 2px solid gray;font-size: 1.2rem;font-weight: 500;color: gray;">Anterior</button>
             <button type="button" class="btn btn-primary" onclick="nextPage(2)" style="border: 2px solid white;font-size: 1.2rem;font-weight: 500;">Siguiente</button>
-            
+
         </div>
-		
+
 		<div class="page" id="page3" style="display:none;">
             <div class="row"><div class="col-md-12">&nbsp;</div></div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
                         <div class="custom-checkbox">
-						
+
                         </div>
                     </div>
                 </div>
@@ -453,7 +453,7 @@ input[type="checkbox"] {
 		  	<div id="pagoexito" style="display:none; margin-top: 20px;margin-bottom: 150px;">
 				<h1 class="section_head" style="margin-bottom: 40px;" >¡Importante!</h1>
 				<h1  id="idtransaccion" class="section_head" style="margin-bottom: 40px;" ></h1>
-				
+
 				 <div style="display: flex;justify-content: center;margin-bottom: 20px;">
 								  <img class="logoMainHeader" src="{{ config('app.url') }}/recursos/public/espera.png"style="
     width: 200px !important;height: 200px !important;filter: invert(100%);
@@ -461,17 +461,17 @@ input[type="checkbox"] {
 								  </div>
 				<h3 class="section_head" style="margin-bottom: 40px;" >Por favor espere, No salgas de esta pagina hasta procesar la compra</h3>
 			</div>
-		   
+
 		   <!------------  aaa ---->
-           
-			
+
+
 			@if($event->pre_order_display_message)
             <div class="well well-small" style="display:none">
                 {!! nl2br(e($event->pre_order_display_message)) !!}
             </div>
             @endif
-			
-         
+
+
             <!--{!! Form::submit(trans("Public_ViewEvent.checkout_order"), ['class' => 'btn btn-lg btn-success card-submit', 'style' => 'width:100%;']) !!}-->
             {!! Form::close() !!}
 			<script src="https://live.decidir.com/static/v2.5/decidir.js"></script>
@@ -480,12 +480,12 @@ input[type="checkbox"] {
 			<div class="custom-row">
 			<div class="custom-col custom-col-md-8">
 			<form id="formulario">
-				
+
 			 <div class="form-group">
 				<label for="card_number">Numero de tarjeta:</label>
 				<input class="form-control" type="text" data-decidir="card_number" placeholder="XXXXXXXXXXXXXXXX" value="" id="card_number" oninput="checkCardNumber()"/>
 			 </div>
-			 
+
 			<!-- Select para cuotas -->
 			<div class="form-group" id="cuotasContainer" style="display:none;">
 			<label for="installments">Seleccionar cuotas:</label>
@@ -495,7 +495,7 @@ input[type="checkbox"] {
 					<option value="6">6 cuotas</option>
 				</select>
 			</div>
-			 
+
 			 <div class="form-group">
 				<label for="security_code">Codigo de seguridad:</label>
 			  <input class="form-control" type="text"  data-decidir="security_code" placeholder="XXX" value="" />
@@ -512,20 +512,20 @@ input[type="checkbox"] {
 				<label for="card_holder_name">Nombre del titular:</label>
 				<input class="form-control" type="text" data-decidir="card_holder_name" placeholder="TITULAR" value=""/>
 			 </div>
-			
+
 		<!--	  <div class="form-group">
 				<label for="card_holder_doc_type">Tipo de documento:</label>
 					<select class="form-control" data-decidir="card_holder_doc_type" style="color: black;width: 100%;padding: 10px;border: 1px solid #ced4da;border-radius: 5px;">
 						<option value="dni">DNI</option>
-					</select> 
+					</select>
 			  </div>-->
 			  <div class="form-group">
 				<label for="card_holder_doc_type">Numero de documento:</label>
 				<input class="form-control" type="text"data-decidir="card_holder_doc_number" placeholder="XXXXXXXXXX" value=""/>
 			  </div>
-			
+
 			 <button style="width: 100%;" class="btn btn-lg btn-success" type="button" onclick="sendFormFunc(event)">Realizar pago</button>
-	
+
 			</form>
 			</div>
 			 <div id="mpago" class="custom-col custom-col-md-4">
@@ -565,8 +565,8 @@ input[type="checkbox"] {
 			</div>
 		<button id="btnanterior" type="button" class="btn btn-secondary" onclick="prevPage(3)" style="margin-bottom: 20px;border: 2px solid gray;font-size: 1.2rem;font-weight: 500;color: gray;">Anterior</button>
         </div>
-		
-		 
+
+
     </div>
 </section>
 
@@ -574,33 +574,33 @@ input[type="checkbox"] {
 
 
     <script src="https://cdn.tailwindcss.com"></script>
-    
-	
-	
-	<script>  
+
+
+
+	<script>
 var bines = @json($event->location_country);
-var binesArray = bines.split(';');	
+var binesArray = bines.split(';');
 //console.log(bines);
 function checkCardNumber() {
     const cardNumber = document.getElementById('card_number').value;
     const cuotasContainer = document.getElementById('cuotasContainer');
-    
-  
+
+
     if (binesArray && binesArray.length > 0) {
-     
+
         if (cardNumber && cardNumber.trim() !== '') {
-           
+
             if (binesArray.some(bine => cardNumber.startsWith(bine))) {
                 cuotasContainer.style.display = 'block';
             } else {
                 cuotasContainer.style.display = 'none';
             }
         } else {
-       
+
             cuotasContainer.style.display = 'none';
         }
     } else {
-     
+
         cuotasContainer.style.display = 'none';
     }
 }
@@ -611,7 +611,7 @@ function checkCardNumber() {
         alert('Pago enviado');
     }
 </script>
-	
+
 
 <script>
     function nextPage(current) {
@@ -636,16 +636,16 @@ let miip="192.168.0.102";
         console.log('El div estaba visible antes de salir.');
         //$('#pagoexito').show(); // Muestra el div si estaba visible
 		localStorage.setItem('divVisible', 'false');
-		window.location.href = '{{ route("personas.miscompras") }}'; 
+		window.location.href = '{{ route("personas.miscompras") }}';
     } else {
         console.log('El div no estaba visible antes de salir.');
     }
 });*/
 
-const publicApiKey = "{{ env('DECIDIR_PUBLIC_KEY') }}";
+const publicApiKey = "{{ config('decidir.decidir_public_key') }}";
 
 //cambiar url
-const urlSandbox = "{{ env('URLPAYWAY') }}";
+const urlSandbox = "{{ config('decidir.url_payway') }}";
 
 const decidirSandbox = new Decidir(urlSandbox);
 decidirSandbox.setPublishableKey(publicApiKey);
@@ -673,7 +673,7 @@ if(selectedPaymentMethod > 0){
         data    :
         {
               token      : response.id
-        },                                    
+        },
         success : function (response)
         {
               var res = JSON.parse(response);
@@ -694,9 +694,9 @@ if(selectedPaymentMethod > 0){
 	var siteidtransaction = 'IDT_'+@json($reserved_tickets_id);
 	var nombrecli = document.getElementById('order_first_name').value;
 	var emailcli = document.getElementById('order_email').value;
-        
-	var installments = parseInt(document.getElementById("installments").value);	
-		
+
+	var installments = parseInt(document.getElementById("installments").value);
+
 		const dataToSend = {
             site_transaction_id: siteidtransaction, // Cambia este ID según sea necesario
             token: token,
@@ -722,41 +722,41 @@ if(selectedPaymentMethod > 0){
             contentType: 'application/json',
             success: function (response) {
                      if (response.status === 'approved') {
-							
+
 							document.getElementById('btnanterior').style.display = 'none';
-							
+
                             $('#formulario').hide();
 							$('#mpago').hide();
 							$('#business_address_line1').val(response.transaction_id);
 
-                          
+
                             $('#pagoexito').show();
-							
+
                              const continuarBtn = $('<button>', {
-                                type: 'button', 
+                                type: 'button',
                                 class: 'btn btn-lg btn-success card-submit',
                                 style: 'width:100%;display:none',
                                 text: 'Continuar',
                                 click: function() {
-                                  
+
                                     $('#formularioproceso').submit();
                                 }
                             });
 
-                           
+
                             $('#pagoexito').append(continuarBtn);
 							 //$('#idtransaccion').text('ID de transacción: ' + response.transaction_id);
 							continuarBtn.click();
-							 
+
 							 //console.log('Respuesta del servidor:', response);
                              //alert('Transacción exitosa. ID de transacción: ' + response.transaction_id);
-                        } else if (response.status === 'rejected') 
-							
+                        } else if (response.status === 'rejected')
+
 							{
 								//console.log('Respuesta del servidor:', response);
 								alert('Su pago ha sido rechazado');
-							} 
-						
+							}
+
 						else {
                            // console.error('Error en la transacción:', response.status_details);
 							//console.log('Respuesta del servidor:', response);
@@ -768,9 +768,9 @@ if(selectedPaymentMethod > 0){
                 console.log('Error al procesar el pago', e);
             }
         });
-	
-	
-    
+
+
+
   }else {
       //console.log('ERROR - STATUS: ' + status + ' - Respuesta: ' +JSON.stringify(response) );
 	  alert('Respuesta:' + response.error[0].error.message);
@@ -795,7 +795,7 @@ function sendFormFunc(event) {
 </script>
 
 
- 
+
 
 <script>
 const ticketOrder = {!! json_encode(session()->get('ticket_order_' . $event_id)) !!};
@@ -811,7 +811,7 @@ var countdownTime = OrderExpires - Math.floor(Date.now() / 1000); // Tiempo rest
 
 function setCountdown(element, duration) {
     var timer = duration, seconds, minutes;
-    
+
     var interval = setInterval(function () {
         seconds = parseInt(timer % 60, 10);
         minutes = parseInt((timer / 60) % 60, 10);
@@ -825,7 +825,7 @@ function setCountdown(element, duration) {
             clearInterval(interval);
             element.textContent = "EXPIRED"; // Mensaje cuando expira
 	    alert("El tiempo expiró");
-	    window.location.href = '{{ route("personas.dashboard") }}'; 
+	    window.location.href = '{{ route("personas.dashboard") }}';
         }
     }, 1000);
 }
@@ -838,7 +838,7 @@ if (document.getElementById('countdown') && countdownTime > 0) {
  function metodopago(id) {
             // Asigna el ID a una variable
             selectedPaymentMethod = id;
-			
+
             let buttons = document.querySelectorAll('.custom-button');
             buttons.forEach(button => {
                 button.classList.remove('selected');
@@ -852,7 +852,7 @@ if (document.getElementById('countdown') && countdownTime > 0) {
             }
         }
     </script>
-	
+
 	<script>
         fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
