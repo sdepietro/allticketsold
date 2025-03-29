@@ -46,6 +46,8 @@ use App\Http\Controllers\TeatroController;
 use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\PaymentController;
 use App\Models\User;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/healthcheck', [PaymentController::class, 'healthCheck']);
 
@@ -1107,3 +1109,19 @@ Route::group(
         )->name('index');
     }
 );
+
+
+
+Route::get('/clear-cache', function () {
+    Artisan::call('cache:clear');
+    //$exitCode = Artisan::call('route:cache');
+    Artisan::call('route:clear');
+    //dd("--");
+    Artisan::call('view:clear');
+    Artisan::call('config:cache');
+    Artisan::call('vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"');
+    dd("Cache borrada correctamente!!!");
+    //$routeCollection = Route::getRoutes();
+    //dd($routeCollection);
+    // return what you want
+});
