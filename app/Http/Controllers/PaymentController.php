@@ -11,11 +11,11 @@ class PaymentController extends Controller
 
     public function healthCheck()
     {
-      
+
 
         //return response()->json($status);
     }
-	public function token(Request $request) 
+	public function token(Request $request)
 		{
 			// Validación de los datos de entrada
 			$request->validate([
@@ -36,12 +36,12 @@ class PaymentController extends Controller
 
 			//$connector = new \Decidir\Connector($keys_data, $ambient, "", "", "SDK-PHP");
 			/*$data = $request->only([
-				'card_number', 
-				'card_expiration_month', 
-				'card_expiration_year', 
-				'card_holder_name', 
-				'card_holder_birthday', 
-				'card_holder_door_number', 
+				'card_number',
+				'card_expiration_month',
+				'card_expiration_year',
+				'card_holder_name',
+				'card_holder_birthday',
+				'card_holder_door_number',
 				'security_code'
 			]);
 
@@ -49,7 +49,7 @@ class PaymentController extends Controller
 				'type' => 'dni',
 				'number' => $request->input('card_holder_identification_number', 'default_number')
 			];*/
-			
+
 			$connector = new \Decidir\Connector($keys_data, $ambient, "", "", "SDK-PHP");
 
 			if (is_null($connector)) {
@@ -61,11 +61,11 @@ class PaymentController extends Controller
 			}
 			$response = $connector->healthcheck()->getStatus();
 			return response()->json((array)$response);
-			
+
 			$data = array(
 			  "card_number" => "4507990000004905",
 			  "card_expiration_month" => "12",
-			  "card_expiration_year" => "30", 
+			  "card_expiration_year" => "30",
 			  "card_holder_name" => "Barb",
 			  "card_holder_birthday" => "24071990",
 			  "card_holder_door_number" => 505,
@@ -73,13 +73,13 @@ class PaymentController extends Controller
 			  "card_holder_identification" => array(
 				  "type" => "dni",
 				  "number" => "29123456"));
-				  
+
 			//$response = $connector->token()->token($data);
-			
+
 			//return response()->json((array)$response);
-			
+
 			/*$respuesta = new TokenResponse();
-			
+
 			$respuesta->setId($response->get('id',null));
 			$respuesta->setStatus($response->get('status',null));
 			$respuesta->setCardNumberLength($response->get('card_number_length', null));
@@ -94,9 +94,9 @@ class PaymentController extends Controller
 			$respuesta->setType($cardHolder['identification']['type']);
 			$respuesta->setNumber($cardHolder['identification']['number']);
 			$respuesta->setName($cardHolder['name']);*/
-			
+
 			//return response()->json((array)$respuesta);
-		   
+
 			//$response = $connector->token()->token($data);
 			//return response()->json($connector);
 			// Imprime la respuesta completa
@@ -107,7 +107,7 @@ class PaymentController extends Controller
 
 			// Crear el objeto TokenResponse
 			//$respuesta = new TokenResponse($arrayResponse);
-			
+
 			//return response()->json($arrayResponse);
 
 			/*// Configura los datos de la respuesta
@@ -133,7 +133,7 @@ class PaymentController extends Controller
 			// Retorna la respuesta en formato JSON
 			return response()->json($respuesta);*/
 		}
-		
+
 public function procesarpagoAAA(Request $request) {
     // Obtener datos JSON
     $input = $request->json()->all();
@@ -145,7 +145,7 @@ public function procesarpagoAAA(Request $request) {
 				'form_site' => "92210260",
 			];
 	$ambient = "prod";
-    
+
     $connector = new Connector($keys_data, $ambient);
 	$response = $connector->healthcheck()->getStatus();
 	//return response()->json((array)$response);
@@ -174,13 +174,13 @@ public function procesarpagoAAA(Request $request) {
 		"redirect_url" => "https://allticketdev.bigresources.com.ar/iniciar-sesion",
 		"fraud_detection" => array( "send_to_cs" => false )
     );
-	
+
 
     try {
         $response = $connector->payment()->Validate($data);
 
         return response()->json((array)$response);
-		
+
     } catch (\Decidir\Exceptions\DecidirException $e) {
         // Capturar la excepción específica de Decidir
         return response()->json([
@@ -188,7 +188,7 @@ public function procesarpagoAAA(Request $request) {
             'message' => $e->getMessage(),
             'data' => $e->getData() ?? [] // Solo si getData() está disponible
         ]);
-    } 
+    }
 }
 
 public function procesarpago(Request $request) {
@@ -202,16 +202,16 @@ public function procesarpago(Request $request) {
 				'private_key' => env('DECIDIR_SECRET_KEY'),
 			];
 	$ambient = env('DECIDIR_AMBIENT');
-    
+
     $connector = new Connector($keys_data, $ambient);
-	
+
 	$total = $input['amount'] * 100;
 
 	$installments = isset($input['installments']) && is_numeric($input['installments']) ? (int) $input['installments'] : 1;
-	
+
     // Preparar los datos para la API de Decidir
     $data = array(
-	
+
         "site_transaction_id" => $input['site_transaction_id'],
         "token" => $input['token'],
         "customer" => array(
@@ -230,9 +230,10 @@ public function procesarpago(Request $request) {
 		"fraud_detection" => array( "send_to_cs" => false ),
         "sub_payments" => array()
     );
-	
+    echo "<pre>"; print_r($data); die();
+
 	$data2 = array();
-	
+
     try {
         $response = $connector->payment()->ExecutePayment($data);
 		$response2 = $connector->payment()->PaymentInfo($data2, $response->getId());
@@ -245,7 +246,7 @@ public function procesarpago(Request $request) {
 			'ip_address' => $ip_address,
             'status_details' => $response->getStatus_details()
         ]);
-		 
+
     } catch (\Decidir\Exceptions\DecidirException $e) {
         // Capturar la excepción específica de Decidir
         return response()->json([
