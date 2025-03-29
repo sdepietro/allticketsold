@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
         URL::forceScheme('https');
     	}
     }
-    
+
     /**
      * Register any application services.
      *
@@ -27,9 +27,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         // Only load LaravelIdeHelper if we're in development mode
-        if ($this->app->environment() !== 'production') {
-            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
-        }
-	
+//        if ($this->app->environment() !== 'production') {
+//            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+//        }
+
     }
 }
