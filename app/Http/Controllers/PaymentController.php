@@ -230,12 +230,12 @@ public function procesarpago(Request $request) {
 		"fraud_detection" => array( "send_to_cs" => false ),
         "sub_payments" => array()
     );
-    echo "<pre>"; print_r($data); die();
 
 	$data2 = array();
 
     try {
         $response = $connector->payment()->ExecutePayment($data);
+        echo "<pre>"; print_r($response); die();
 		$response2 = $connector->payment()->PaymentInfo($data2, $response->getId());
 
         // Devolver una respuesta adecuada al cliente
