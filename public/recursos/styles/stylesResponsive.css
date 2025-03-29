@@ -1,0 +1,903 @@
+.containerMenu {
+  display: none !important;
+  justify-content: end !important;
+}
+.btnIngresarDash {
+  cursor: pointer;
+  border-radius: 10px;
+}
+.btnIngresar {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+.btnIngresar:hover {
+  transform: scale(1.01);
+}
+.btnIngresar,
+.btnIngresarDash {
+  align-items: center;
+  display: flex;
+  user-select: none;
+}
+.btnIngresar > a > img,
+.btnIngresarDash > label > img {
+  max-height: 30px;
+}
+.arrowBtnDashboard {
+  max-height: 12px !important;
+}
+.containerMenuDashboard {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  background-color: #000;
+  bottom: -13.5em;
+  z-index: 9999 !important;
+  padding: 1em;
+  width: 100%;
+}
+.btnIngresar > input[type="checkbox"],
+.btnIngresarDash > input[type="checkbox"] {
+  display: none;
+}
+.btnIngresar > input[type="checkbox"]:checked + label + .containerMenuDashboard,
+.btnIngresarDash
+  > input[type="checkbox"]:checked
+  + label
+  + .containerMenuDashboard {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.containerMenuDashboard > a:hover {
+  color: #ffff00;
+}
+.iconEnlacesRedes,
+.lupaBuscadorLogo {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.iconEnlacesRedes:hover {
+  transform: scale(0.85);
+}
+.lupaBuscadorLogo:hover {
+  transform: scale(0.85);
+}
+.btnVerObra {
+  position: absolute;
+  z-index: 9999;
+  bottom: 30px;
+  left: 6em;
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  background: var(--bgHeader);
+  padding: 10px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btnVerObra p {
+  font-size: 2em;
+  padding-left: 0.2em;
+}
+.btnVerObra:hover > div > img {
+  transform: translateX(3px);
+}
+.allTicketTransparent {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 9999;
+}
+.seccion-bloque {
+  position: relative;
+}
+.animationShow {
+  transition: all 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  height: 270px !important;
+  user-select: none !important;
+  border-radius: 6px !important;
+  /* width: 470px !important; */
+}
+.animationShow:hover {
+  transform: scale(1.05);
+  z-index: 9999;
+  cursor: pointer;
+}
+.animationShow > img {
+  object-fit: fill;
+  border-radius: 6px !important;
+}
+.containerDescription {
+  background: #272e3a;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+  display: none;
+  position: absolute;
+  bottom: -75px;
+  z-index: 99999;
+  border: 1px solid #272e3a;
+  color: #fff;
+}
+.containerDescription > div > span {
+  color: #ffff00;
+  text-align: left;
+}
+.containerDescription > div {
+  gap: 0.7em;
+}
+.containerDescription > div > p {
+  text-align: left;
+  line-height: 1.2em;
+}
+.containerDescription button {
+  color: #fff;
+  background: var(--bgHeader);
+  padding: 5px 25px;
+}
+.containerDuracion {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: end;
+}
+.containerDescription img {
+  width: 17px;
+  height: 17px;
+}
+.slideObras {
+  overflow: visible !important;
+}
+.containerLogin {
+  width: max-content;
+  padding: 2em;
+  gap: 2em;
+  font-size: 25px;
+  width: 55%;
+}
+.containerRegistro, .containerPreg {
+  width: 70%;
+  padding: 2em;
+}
+.containerRegistro > span {
+  font-size: 25px;
+  font-weight: bold;
+}
+.containerFormRegistro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  column-gap: 3em;
+  padding: 2em;
+  color: #fff;
+  width: 100%;
+}
+.containerFormSobreNos {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  gap: 1em;
+  column-gap: 3em;
+  padding: 2em;
+  color: #fff;
+}
+.containerFormSobrePreg{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  column-gap: 3em;
+  padding: 2em;
+  color: #fff;
+  width: 100%;
+}
+.sectionName{
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.containerFormLogin {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  width: 100%;
+}
+.containerFormLogin > div,
+.containerFormRegistro > div {
+  gap: 2.5em;
+}
+.containerFormRegistro > div > label {
+  font-size: 25px;
+}
+.containerFormLogin > div > label > input,
+.containerFormRegistro > div > label > input {
+  background: transparent !important;
+  border-bottom: 1.5px solid #a7a7a7 !important;
+  outline: none !important;
+  font-weight: bold;
+}
+.btnFormLogin {
+  background-color: #000;
+  color: #fff;
+  padding: 0.7em 3em;
+  font-weight: bold;
+  font-size: 25px !important;
+  transition: all 0.3s ease;
+}
+.btnFormLogin:hover {
+  transform: translateY(-3px);
+}
+.listadoCategoriaNav li,
+.containerEnlacesFo li {
+  transition: all 0.3s ease;
+}
+.listadoCategoriaNav li:hover,
+.containerEnlacesFo li:hover {
+  cursor: pointer;
+  color: #ffff00;
+  transform: translateY(-1.5px);
+}
+.bgLogin > form {
+  margin: 2em 0;
+}
+.containerTicketsPrecio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+}
+.containerSinopsis {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+.containerTicketsPrecio > ul > div > li p:nth-child(1) {
+  font-size: 25px;
+}
+.containerTicketsPrecio > ul > div > li p:nth-child(2) {
+  font-size: 18px;
+}
+.containerTicketsPrecio > ul > div {
+  column-gap: 2em;
+  justify-content: space-between;
+}
+.containerTicketsPrecio > ul > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containerTicketsPrecio > ul > div > div > select {
+  width: 100%;
+}
+.btnComprarTicket {
+  background-color: #ff0000;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.btnComprarTicket:hover {
+  transform: scale(1.05);
+}
+#numeroVIp {
+  padding: 1.5px;
+}
+.containerEnlacesObra li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.containerEnlacesObra li:hover {
+  transform: translateY(-3px);
+}
+.tituloSeccionObra {
+  font-size: 40px;
+}
+#map {
+  height: 100%;
+}
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1.5rem;
+}
+.containerEdit{
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.input {
+  border-right-width: 0px;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-color: rgb(255 255 255 / 0.7);
+  --tw-border-opacity: 0.7;
+  background-color: inherit;
+  padding-left: 0px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  outline: none!important;
+}
+.input:focus{
+  border-color: rgba(255, 62, 62, 0.7);
+}
+.btnGuardarEdit{
+  transition: all 0.3s ease;
+}
+.btnGuardarEdit:hover{
+  transform: translateY(-3px);
+}
+.textColor{
+  color: #333;
+}
+.bgLight{
+  background-color: #E5E5E5;
+}
+.containerTextArea{
+  width: 100%;
+  padding: 0 2em;
+  color: #fff;
+}
+.containerTextArea > label{
+  font-size: 25px;
+}
+.iconOpciones{
+  width: 25px;
+  height: auto;
+}
+.bgOpciones{
+  background-color: #231F20;
+  font-size: 25px;
+  text-wrap: nowrap;
+  min-width: max-content;
+  gap: 1em;
+}
+.bgDropDown{
+  background-color: #C5BCBE;
+  color: #000;
+  padding: 0.8em;
+  display: none;
+}
+.bgDropDown + .active{
+  display: block;
+}
+.active {
+  display: block;
+}
+.containerTerminos{
+  font-size: 20px;
+  padding-top: 2em;
+  height: 450px;
+  overflow-y: scroll;
+  margin-right: -1em;
+}
+.containerTerminos::-webkit-scrollbar-thumb {
+  background: #9CC0FD;
+  border-radius: 8px;
+  width: 10px!important;
+}
+.containerTerminos::-webkit-scrollbar {
+  background-color: transparent;
+  border-radius: 8px;
+  width: 10px!important;
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding: 1rem 4rem;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  .containerFormSobrePreg{
+    grid-template-columns: 1fr;
+  }
+  .buscadorMain,
+  .btnIngresar {
+    display: none !important;
+  }
+  .containerRedesFo {
+    position: relative !important;
+    justify-content: center;
+    padding-top: 1em;
+  }
+  .titleSection {
+    font-size: 1em;
+  }
+  .logoSection {
+    width: 45px;
+    height: 45px;
+  }
+  .buscadorMain {
+    display: none !important;
+  }
+  .btnIngresar {
+    display: none !important;
+  }
+
+  .logoFooter {
+    width: 250px;
+  }
+  .containerRedesFo {
+    position: relative !important;
+    right: 0 !important;
+  }
+  .logoMainHeader {
+    height: 55px !important;
+  }
+  .containerHeader {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .containerMenu {
+    display: flex !important;
+    justify-content: end !important;
+  }
+  .containerMenu img {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex !important;
+    justify-content: space-around;
+  }
+
+  .menu > li {
+    position: relative;
+  }
+
+  .menu > li > a,
+  .menu > li > label {
+    display: block;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .submenu {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    z-index: 9999;
+    list-style-type: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0;
+    background-color: #333;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: -16px;
+    text-align: center;
+    gap: 1em;
+  }
+
+  .menu > li input[type="checkbox"] {
+    display: none;
+  }
+
+  .menu > li input[type="checkbox"]:checked + label + .submenu {
+    display: flex;
+  }
+  .submenu > li:first-child {
+    border-bottom: 1px solid #fff;
+  }
+
+  .submenu > li > a {
+    display: flex;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    text-wrap: nowrap;
+  }
+
+  .submenu > li > a:hover {
+    background-color: #555;
+  }
+  .btnVerObra {
+    font-size: 0.9em;
+  }
+  .btnVerObra img {
+    height: 50px;
+  }
+  .btnVerObra > div > img {
+    height: 22px;
+  }
+  .containerRegistro {
+    width: auto !important;
+    padding: 2em 0 !important;
+  }
+  .listadoCategoriaNav {
+    font-size: 1em !important;
+  }
+  .tituloSeccionObra {
+    font-size: 32px;
+  }
+  .text-size-normal {
+    font-size: 16px !important;
+  }
+  .containerObras {
+    padding: 1em !important;
+  }
+  .containerEnlacesObra,
+  .containerLugarObras,
+  .containerSinopsis {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.7em;
+  }
+  .containerEnlacesObra li {
+    width: 100%;
+  }
+  .containerSubtitleObra {
+    flex-direction: column !important;
+  }
+  .containerTicketsPrecio {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .containerTicketsPrecio > ul > div > li p:nth-child(1) {
+    font-size: 18px;
+  }
+  .containerTicketsPrecio ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    margin: 2em 0;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .btnVerObra {
+    font-size: 0.7em;
+  }
+  .btnVerObra img {
+    height: 40px;
+  }
+  .btnVerObra > div > img {
+    height: 18px;
+  }
+  .containerFormSobreNos{
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (width < 1600px) {
+  .containerPreg{
+    width: 95%;
+  }
+}
+@media screen and (max-width: 880px) {
+  .btnVerObra {
+    font-size: 0.5em;
+  }
+  .btnVerObra img {
+    height: 28px;
+  }
+  .btnVerObra > div > img {
+    height: 12px;
+  }
+}
+@media screen and (max-width: 1060px) {
+  .containerSiguenos {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 895px) {
+  .containerRegistro {
+    width: auto !important;
+    padding: 2em 0 !important;
+  }
+  .listadoCategoriaNav {
+    font-size: 1em !important;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .containerRegistro {
+    width: 95% !important;
+    font-size: 0.9em !important;
+    padding: 1em !important;
+  }
+  .containerFormRegistro {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (width < 600px) {
+  .containerFormSobrePreg{
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .containerPreg {
+    width: 100%;
+  }
+  .containerFormSobreNos{
+    width: 100%;
+    padding: 0;
+  }
+  .bgOpciones{
+    text-wrap: wrap;
+    min-width: min-content;
+  }
+  .bgOpciones > span{
+    font-size: 15px;
+  }
+
+  .containerRegistro > div > img, .containerPreg > div > img{
+    width: 50px;
+  }
+  .containerRegistro > div > span, .containerPreg > div > span{
+    font-size: 15px;
+  }
+  .containerTableMisCompras{
+    overflow-x: scroll;
+    width: 100%;
+  }
+  .titleSection {
+    font-size: 1em;
+  }
+  .logoSection {
+    width: 45px;
+    height: 40px;
+  }
+  .slideObras {
+    padding: 1.5em 3em !important;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    transform: scale(0.5);
+  }
+  .buscadorMain {
+    display: none !important;
+  }
+  .btnIngresar {
+    display: none !important;
+  }
+  .containerSiguenos {
+    display: none !important;
+  }
+  .logoFooter {
+    width: 150px;
+  }
+  .textCopyRight {
+    font-size: 0.7em;
+  }
+  .containerEnlacesFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .containerEnlacesFo {
+    flex-direction: column;
+    padding-bottom: 1.5em;
+  }
+  .containerRedesFo {
+    position: relative !important;
+    right: 0 !important;
+  }
+  .listadoCategoriaNav {
+    font-size: 0.48em !important;
+  }
+  .logoMainHeader {
+    height: 25px !important;
+  }
+  .containerHeader {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .containerMenu {
+    display: flex !important;
+    justify-content: end !important;
+  }
+  .containerMenu img {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex !important;
+    justify-content: space-around;
+  }
+
+  .menu > li {
+    position: relative;
+  }
+
+  .menu > li > a,
+  .menu > li > label {
+    display: block;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .submenu {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    z-index: 9999;
+    list-style-type: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0;
+    background-color: #333;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: -16px;
+    text-align: center;
+    gap: 1em;
+  }
+
+  .menu > li input[type="checkbox"] {
+    display: none;
+  }
+
+  .menu > li input[type="checkbox"]:checked + label + .submenu {
+    display: flex;
+  }
+  .submenu > li:first-child {
+    border-bottom: 1px solid #fff;
+  }
+  .submenu > li > a {
+    display: flex;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    text-wrap: nowrap;
+  }
+  .submenu > li > a:hover {
+    background-color: #555;
+  }
+  .containerVerBtnObra {
+    gap: 0.3em !important;
+  }
+  .allTicketTransparent {
+    width: 110px !important;
+    top: 12px !important;
+    right: 12px !important;
+  }
+  .slideMain {
+    /* height: 170px; */
+    object-fit: cover;
+  }
+  .animationShow {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .containerDescription,
+  .containerDescription > div > p {
+    font-size: 0.8em;
+    text-align: left;
+    line-height: 1.2em;
+  }
+  .containerDescription > div > span {
+    color: #ffff00;
+    text-align: left;
+  }
+  .containerLogin,
+  .containerRegistro {
+    width: 95% !important;
+    font-size: 0.9em !important;
+    padding: 1em !important;
+  }
+  .containerLogin > img,
+  .containerRegistro > img {
+    width: 150px !important;
+  }
+  .containerRegistro > span {
+    flex-direction: column;
+    align-items: center;
+  }
+  .containerFormRegistro {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    gap: 2em !important;
+  }
+  .containerFormRegistro > div > label, .containerTextArea > label {
+    font-size: 20px;
+  }
+  .btnFormLogin {
+    font-size: 20px !important;
+  }
+  .bgLogin > form {
+    height: auto !important;
+    margin: 1em 0;
+  }
+  .btnIngresarDash {
+    padding: 0.5em !important;
+  }
+  .btnIngresarDash > label > div {
+    font-size: 0.8em;
+    line-height: 1.3em;
+  }
+  .btnIngresarDash > label > img {
+    max-height: 20px;
+  }
+  .arrowBtnDashboard {
+    width: 9px !important;
+  }
+  .containerMenuDashboard {
+    bottom: -11.2em !important;
+  }
+  .containerMenuDashboard a {
+    font-size: 0.8em;
+  }
+  .containerMenuDashboard a > img {
+    width: 19px !important;
+  }
+  .btnVerObra {
+    font-size: 0.45em;
+    padding: 0.6em 1.1em;
+    left: 1em;
+    bottom: 8px;
+  }
+  .btnVerObra img {
+    height: 24px;
+  }
+  .tituloSeccionObra {
+    font-size: 24px;
+  }
+  .text-size-normal {
+    font-size: 16px !important;
+  }
+  .containerObras {
+    padding: 1em !important;
+  }
+  .containerEnlacesObra,
+  .containerLugarObras,
+  .containerSinopsis {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1em !important;
+  }
+  .containerEnlacesObra li {
+    width: 100%;
+  }
+  .containerSubtitleObra {
+    flex-direction: column !important;
+  }
+  .containerSubtitleObra > li > div > img {
+    height: 15px;
+  }
+  .containerSubtitleObra > li {
+    justify-content: space-between !important;
+  }
+  .containerTicketsPrecio {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .textDescripcionPlateas {
+    display: none;
+  }
+  .containerTicketsPrecio > ul > div > li p:nth-child(1) {
+    font-size: 18px;
+  }
+  .containerTicketsPrecio ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    margin: 2em 0;
+  }
+  .containerTicketsPrecio > div > img {
+    height: 120px;
+  }
+  .btnComprarTicket{
+    width: 100%;
+    padding: 0.6em 1.1em;
+    margin: 1em 0;
+    font-size: 20px!important;
+  }
+  .containerTextArea{
+    padding: 0;
+  }
+}
