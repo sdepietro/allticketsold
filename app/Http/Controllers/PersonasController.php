@@ -3125,7 +3125,7 @@ class PersonasController extends Controller
 
         // Envío de correo
         Mail::send(Lang::locale() . '.Emails.messageReceived', $data, function ($message) use ($data, $organiser) {
-            $message->to($organiser->email, env('NOMBRE_CONTACTO'))
+            $message->to($organiser->email, "Organizador")
                 ->from($data['sender_email'], $data['sender_name'])
                 ->replyTo($data['sender_email'], $data['sender_name'])
                 ->subject('HAS RECIBIDO UN MENSAJE DE CONTACTO');
@@ -3173,7 +3173,7 @@ class PersonasController extends Controller
         ];
         $event = "1";
         Mail::send(Lang::locale() . '.Emails.messageReceived', $data, function ($message) use ($data, $organiser) {
-            $message->to($organiser->email, env('NOMBRE_CONTACTO'))
+            $message->to($organiser->email, "Organizador")
                 ->from($data['sender_email'], $data['sender_name'])
                 ->replyTo($data['sender_email'], $data['sender_name'])
                 ->subject('HAS RECIBIDO UN MENSAJE DE BOTON DE ARREPENTIMIENTO');
