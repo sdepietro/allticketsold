@@ -19,7 +19,7 @@ class SendOrderConfirmationJob implements ShouldQueue
 
     public $order;
     public $orderService;
-	public $orderUrl;
+    public $orderUrl;
 
     /**
      * Create a new job instance.
@@ -30,7 +30,7 @@ class SendOrderConfirmationJob implements ShouldQueue
     {
         $this->order = $order;
         $this->orderService = $orderService;
-		$this->orderUrl = $orderUrl;
+        $this->orderUrl = $orderUrl;
     }
 
     /**
@@ -41,14 +41,17 @@ class SendOrderConfirmationJob implements ShouldQueue
     public function handle()
     {
         //GenerateTicketsJob::dispatchNow($this->order);
-		try {
-        $mail = new SendOrderConfirmationMail($this->order, $this->orderService, $this->orderUrl);
-        Mail::to($this->order->email)
-            ->locale(Config::get('app.locale'))
-            ->send($mail);
-		} catch (\Exception $e) {
-        // No hacer nada; simplemente continuar con la ejecución
-		}
-			
+        try {
+            $mail = new SendOrderConfirmationMail($this->order, $this->orderService, $this->orderUrl);
+
+            //IMPORTANTE WOOPI DESCOMENTAR ESTA LINEA
+
+//            Mail::to($this->order->email)
+//                ->locale(Config::get('app.locale'))
+//                ->send($mail);
+        } catch (\Exception $e) {
+            // No hacer nada; simplemente continuar con la ejecución
+        }
+
     }
 }

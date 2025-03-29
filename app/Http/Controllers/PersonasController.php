@@ -2541,7 +2541,9 @@ class PersonasController extends Controller
             if (!$cliente) {
                 // Si el cliente no existe, crear un nuevo cliente
                 $cliente = Cliente::create($validated);
-                Mail::to($cliente->email)->send(new ClienteCreated($cliente->email, $contraseña));
+
+                //IMPORTANTE WOOOPI DESCOMENTAR
+                //Mail::to($cliente->email)->send(new ClienteCreated($cliente->email, $contraseña));
             } else {
                 // Si el cliente ya existe, actualizar la información si es necesario
                 // Aquí puedes decidir qué hacer si el cliente ya existe, por ejemplo, actualizar su teléfono o nombre.
