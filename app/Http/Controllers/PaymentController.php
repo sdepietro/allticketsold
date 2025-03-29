@@ -197,11 +197,11 @@ public function procesarpago(Request $request) {
 	$ip_address = $input['customer']['ip_address'];
 
     // Asigna tus datos de claves aquí
-   $keys_data = [
-				'public_key' => env('DECIDIR_PUBLIC_KEY'),
-				'private_key' => env('DECIDIR_SECRET_KEY'),
-			];
-	$ambient = env('DECIDIR_AMBIENT');
+    $keys_data = [
+        'public_key' => config('decidir.decidir_public_key'),
+        'private_key' => config('decidir.decidir_secret_key'),
+    ];
+    $ambient = config('decidir.ambient');
 
     $connector = new Connector($keys_data, $ambient);
 
@@ -235,7 +235,6 @@ public function procesarpago(Request $request) {
 
     try {
         $response = $connector->payment()->ExecutePayment($data);
-        echo "<pre>"; print_r($response); die();
 		$response2 = $connector->payment()->PaymentInfo($data2, $response->getId());
 
         // Devolver una respuesta adecuada al cliente
