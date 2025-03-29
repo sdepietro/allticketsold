@@ -100,7 +100,8 @@ storage/framework/views/
 /storage/*.sqlite
 /storage/framework/*
 /storage/logs/*
-/bootstrap/cache/
-/bootstrap/cache/*.*
+!/bootstrap/cache/
+bootstrap/cache/*.php
+bootstrap/cache/*.json
 
 storage/framework/views/
