@@ -79,9 +79,6 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@php artisan clear-compiled",
-            "@php -r \"copy('.env.example', '.env');\"",
-            "@php artisan key:generate"
         ],
         "post-update-cmd": [
             "@php artisan clear-compiled",
